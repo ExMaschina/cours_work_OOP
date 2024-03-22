@@ -7,7 +7,7 @@ class ApiHH:
         self.vacancies = []
 
     def get_vacancies(self, job_name):
-        '''получение вакансии из сайта и приведение её в удобный формат'''
+        '''Получение вакансии из сайта и приведение её в удобный формат'''
         response = requests.get(f'https://api.hh.ru/vacancies?per_page=100')  # &text={job_name}search_field=name') #получаем страницу
         response_data = response.json() # оборачиваем в json
         #print(response_data)
