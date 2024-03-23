@@ -16,6 +16,7 @@ class Vacancy:
                            'to': 0
                            }
 
+
     @classmethod
     def cast_to_object_list(cls, a_list):
         '''Преобразование набора данных из JSON в список объектов'''
@@ -25,8 +26,10 @@ class Vacancy:
                 cls(item['id'], item['name'], item['alternate_url'], item['salary'], item['responsibility']))
         return current_list
 
+
     def __repr__(self):
-        return f'{self.__class__.__name__}({self.id}, {self.name}, {self.alternate_url}, {self.salary}, {self.responsibility})'
+        stars = '***' * 60
+        return (f'\n{self.__class__.__name__} {self.id}\n {self.name}\n {self.alternate_url}\n {self.salary}\n {self.responsibility}\n {stars}\n')
 
     # def __lt__(self, other):
     #     return self.salary < other.salary
