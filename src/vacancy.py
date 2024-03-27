@@ -1,20 +1,20 @@
 class Vacancy:
 
-    def __init__(self, id, name, alternate_url, salary, responsibility):
+    def __init__(self, id, name, alternate_url, salary_from, salary_to, responsibility):
         self.id = id
         self.name = name
         self.alternate_url = alternate_url
-        self.salary = salary
-        self.validate_salary()
+        self.salary_from = salary_from
+        self.salary_to = salary_to
+        # self.validate_salary()
         self.responsibility = responsibility
-        # self.salary_to = salary_to
         # self.validate_data()
 
-    def validate_salary(self):
-        if not self.salary:
-            self.salary = {'from': 0,
-                           'to': 0
-                           }
+    # def validate_salary(self):
+    #     if not self.salary:
+    #         self.salary = {'from': 0,
+    #                        'to': 0
+    #                        }
 
 
     @classmethod
@@ -29,7 +29,7 @@ class Vacancy:
 
     def __repr__(self):
         stars = '***' * 60
-        return (f'\n{self.__class__.__name__} {self.id}\n {self.name}\n {self.alternate_url}\n {self.salary}\n {self.responsibility}\n {stars}\n')
+        return f'\n{self.__class__.__name__} {self.id}\n {self.name}\n {self.alternate_url}\n {self.salary}\n {self.responsibility}\n {stars}\n'
 
     # def __lt__(self, other):
     #     return self.salary < other.salary
